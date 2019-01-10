@@ -44,10 +44,34 @@ h1{
 
 /*// ANIMATION STYLES //*/
 
+.panels div.back {
+    transform: rotateY(90deg);
+}
 
+.panels div.front {
+/*    position: absolute;*/
+}
+.panels li:hover div.front {
+    animation: twirl  1.0s 0.2s ease-out forwards, 
+               twirl2 0.2s 0.5s forwards, 
+               twirl3 0.8s 0.5s forwards;
+}
 
+.panels li:hover div.back {
+    animation: twirl 0.2s 0.2s ease-in  forwards reverse ;
+}
 
+@keyframes twirl{
+    0%{transform: rotateY(0deg) }
+    100%{transform: rotateY(90deg) }
+}
 
+@keyframes twirl2{
+    0%{transform: rotateZ(0deg) }
+    100%{transform: rotateZ(90deg) }
+}
 
-
-
+@keyframes twirl3{
+    0%{transform: rotateX(0deg) }
+    100%{transform: rotateX(90deg) }
+}
